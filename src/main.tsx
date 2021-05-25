@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
+import Magia from './Magia'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Magia />
   </React.StrictMode>,
   document.getElementById('root')
 )
