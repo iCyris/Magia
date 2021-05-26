@@ -6,13 +6,19 @@ const Chapter1: React.FC<{
   const [colorIndex, setColorIndex] = useState(0);
 
   const updateColorIndex = () => {
-    setColorIndex(colorIndex + 1);
+    if (colorIndex + 1 <= 5) {
+      setColorIndex(colorIndex + 1);
+    }
   };
 
   const renderSpan = (index: number) => {
     return (
       <div key={`chapter1__word-group-${index}`} className={`chapter1__word-group chapter1__word-group-${index}`}>
-        <span /><span /><span /><span />
+        <span onAnimationEnd={e => {
+          if (e?.animationName?.includes('hidden')) {
+            updateColorIndex();
+          }
+        }} /><span /><span /><span />
         <span /><span /><span /><span />
       </div>
     );
