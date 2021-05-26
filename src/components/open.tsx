@@ -15,6 +15,10 @@ const Open: React.FC<{
           <span></span>
         </div>
       </div>
+      <div className="chapter-open__lines">
+        <div className="chapter-open__line-top"></div>
+        <div className="chapter-open__line-bottom"></div>
+      </div>
       <div className="chapter-open__title">
         <div className="chapter-open__title-group">
           <span className="title-mo"></span>
@@ -22,6 +26,12 @@ const Open: React.FC<{
         <div className="chapter-open__title-group">
           <span className="title-nv"></span>
           <span className="title-fa"></span>
+        </div>
+        <div className="chapter-open__title-wrap">
+          <div className="chapter-open__title-wrap-item"></div>
+          <div className="chapter-open__title-wrap-item"></div>
+          <div className="chapter-open__title-wrap-item"></div>
+          <div className="chapter-open__title-wrap-item"></div>
         </div>
       </div>
     </div>

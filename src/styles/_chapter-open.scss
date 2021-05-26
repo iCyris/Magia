@@ -93,6 +93,7 @@ $chapter-open-title-size: 20vmin;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 80%;
+    opacity: 0;
 
     // animation: test-show 1s ease forwards;
   }
@@ -110,16 +111,199 @@ $chapter-open-title-size: 20vmin;
   }
 }
 
+.chapter-open__lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  .chapter-open__line-top, .chapter-open__line-bottom {
+    position: absolute;
+    width: 2px;
+    height: calc(50% - #{$chapter-open-title-size});
+    left: calc(50% - 1px);
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $theme-purple;
+      transform-origin: center;
+    }
+  }
+  .chapter-open__line-top {
+    top: 0;
+
+    &::after {
+      transform: translateY(-100%);
+    }
+  }
+  .chapter-open__line-bottom {
+    bottom: 0;
+
+    &::after {
+      transform: translateY(100%);
+    }
+  }
+}
+
+.chapter-open__title-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  .chapter-open__title-wrap-item {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+
+    $size: 2px;
+
+    &::before, &::after {
+      position: absolute;
+      content: "";
+      background-color: $theme-purple;
+    }
+
+    // item-1
+    &:nth-child(1)::before {
+      width: 100%;
+      height: $size;
+      left: 0;
+      top: 0;
+      transform: translateX(100%);
+    }
+    &:nth-child(1)::after {
+      height: 100%;
+      width: $size;
+      left: 0;
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    // item-2
+    &:nth-child(2)::before {
+      width: 100%;
+      height: $size;
+      right: 0;
+      top: 0;
+      transform: translateX(-100%);
+    }
+    &:nth-child(2)::after {
+      height: 100%;
+      width: $size;
+      right: 0;
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    // item-3
+    &:nth-child(3)::before {
+      width: 100%;
+      height: $size;
+      left: 0;
+      bottom: 0;
+      transform: translateX(100%);
+    }
+    &:nth-child(3)::after {
+      height: 100%;
+      width: $size;
+      left: 0;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+
+    // item-4
+    &:nth-child(4)::before {
+      width: 100%;
+      height: $size;
+      right: 0;
+      bottom: 0;
+      transform: translateX(-100%);
+    }
+    &:nth-child(4)::after {
+      height: 100%;
+      width: $size;
+      right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+  }
+}
+
 
 /* animations */
-.chapter-open__bg-group1 {
-  animation: chapter-open__bg-group1-in 1s ease forwards;
+// .chapter-open__bg-group1 {
+//   animation: chapter-open__bg-group1-in 1s ease forwards;
+// }
+
+// .chapter-open__bg-group2 {
+//   animation: chapter-open__bg-group2-in 1s ease forwards;
+// }
+
+// .title-fa {
+//   animation: test-out 2s ease forwards 1s;
+// }
+
+.chapter-open__line-top::after {
+  animation: top-slide-through .8s linear forwards;
 }
 
-.chapter-open__bg-group2 {
-  animation: chapter-open__bg-group2-in 1s ease forwards;
+.chapter-open__line-bottom::after {
+  animation: bottom-slide-through .8s linear forwards;
 }
 
-.title-fa {
-  animation: test-out 2s ease forwards 1s;
+.chapter-open__title-wrap {
+  $animation-time: .4s;
+  $animation-delay: .4s;
+
+  .chapter-open__title-wrap-item {
+    &::before {
+      animation-duration: $animation-time;
+      animation-delay: $animation-delay;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    &::after {
+      animation-duration: $animation-time * 2;
+      animation-delay: #{$animation-time + $animation-delay};
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .chapter-open__title-wrap-item:nth-child(1) {
+    &::before { animation-name: right-slide-through; }
+    &::after { animation-name: top-slide-through; }
+  }
+  
+  .chapter-open__title-wrap-item:nth-child(2) {
+    &::before { animation-name: left-slide-through; }
+    &::after { animation-name: top-slide-through; }
+  }
+  
+  .chapter-open__title-wrap-item:nth-child(3) {
+    &::before { animation-name: right-slide-through; }
+    &::after { animation-name: bottom-slide-through; }
+  }
+  
+  .chapter-open__title-wrap-item:nth-child(4) {
+    &::before { animation-name: right-slide-through; }
+    &::after { animation-name: bottom-slide-through; }
+  }
 }
