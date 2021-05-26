@@ -1,3 +1,129 @@
 .chapter1 {
   background-color: $theme-yellow;
 }
+
+$word-box-size: 20vmin;
+.chapter1__word-group {
+  position: absolute;
+  width: $word-box-size;
+  height: $word-box-size * 2 + 4vmin;
+  left: calc(50% - #{$word-box-size} / 2);
+  top: calc(50% - #{$word-box-size} - 2vmin);
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: calc(#{$word-box-size} / 2);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    opacity: 0;
+
+    &:nth-child(1), &:nth-child(5) {
+      background-position: left top;
+    }
+    &:nth-child(2), &:nth-child(6) {
+      background-position: right top;
+    }
+    &:nth-child(3), &:nth-child(7) {
+      background-position: left bottom;
+    }
+    &:nth-child(4), &:nth-child(8) {
+      background-position: right bottom;
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+      margin-bottom: 4vmin;
+    }
+  }
+}
+
+// 黄 - 信仰
+.chapter1__word-group-1 {
+  span {
+    opacity: 1;
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      background-image: url('/img/chapter1-title-xinyang-1.svg');
+    }
+    &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+      background-image: url('/img/chapter1-title-xinyang-2.svg');
+    }
+  }
+}
+// 红 - 祈愿
+.chapter1__word-group-2 {
+  span {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      background-image: url('/img/chapter1-title-qiyuan-1.svg');
+    }
+    &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+      background-image: url('/img/chapter1-title-qiyuan-2.svg');
+    }
+  }
+}
+// 蓝 - 正义
+.chapter1__word-group-3 {
+  span {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      background-image: url('/img/chapter1-title-zhengyi-1.svg');
+    }
+    &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+      background-image: url('/img/chapter1-title-zhengyi-2.svg');
+    }
+  }
+}
+// 粉 - 希望
+.chapter1__word-group-4 {
+  span {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      background-image: url('/img/chapter1-title-xiwang-1.svg');
+    }
+    &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+      background-image: url('/img/chapter1-title-xiwang-2.svg');
+    }
+  }
+}
+// 紫 - 守护
+.chapter1__word-group-5 {
+  span {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      background-image: url('/img/chapter1-title-shouhu-1.svg');
+    }
+    &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+      background-image: url('/img/chapter1-title-shouhu-2.svg');
+    }
+  }
+}
+
+.chapter1__word-group-1 {
+  
+}
+.chapter1__word-group-2 {
+  
+}
+.chapter1__word-group-3 {
+  
+}
+.chapter1__word-group-4 {
+  
+}
+.chapter1__word-group-5 {
+  
+}
+
+
+/* Animations */
+.chapter1-color-1 {
+  animation: chapter1__bg-change-1 .4s ease forwards;
+}
+.chapter1-color-2 {
+  animation: chapter1__bg-change-2 .4s ease forwards;
+}
+.chapter1-color-3 {
+  animation: chapter1__bg-change-3 .4s ease forwards;
+}
+.chapter1-color-4 {
+  animation: chapter1__bg-change-4 .4s ease forwards;
+}

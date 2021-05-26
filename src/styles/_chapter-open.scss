@@ -471,7 +471,5 @@ $chapter-open-title-size: 20vmin;
 }
 
 .chapter-open__switch-rotate {
-  // cubic-bezier(.25,.1,0,1.19)
-  // cubic-bezier(.25,.1,.12,1.14)
-  animation: chapter-open__switch-rotate-in 1s cubic-bezier(.25,.1,.12,1.14) 4s forwards;
+  animation: chapter-open__switch-rotate-in 1.2s cubic-bezier(.25,.1,.12,1.14) 4s forwards;
 }
