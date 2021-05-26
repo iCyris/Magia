@@ -121,17 +121,36 @@
 @keyframes chapter-open__bg-group1-in {
 	0% {
 		transform: translateX(-100%) translateY(-100%);
+		opacity: 0;
 	}
 	100% {
 		transform: translateX(0) translateY(0);
+		opacity: 1;
 	}
 }
 @keyframes chapter-open__bg-group2-in {
 	0% {
 		transform: translateX(100%) translateY(100%);
+		opacity: 0;
 	}
 	100% {
 		transform: translateX(0) translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes chapter-open__switch-rotate-in {
+	0% {
+		transform: rotate(180deg);
+	}
+	85% {
+		transform: rotate(-5deg);
+	}
+	// 90% {
+	// 	transform: rotate(10deg);
+	// }
+	100% {
+		transform: rotate(0);
 	}
 }
 
@@ -151,12 +170,10 @@
 	from {
 		transform: translateY(0) rotateY(0) rotateX(0);
 		opacity: .7;
-		background-color: unset;
 	}
 
 	to {
 		transform: translateY(70vh) rotateY(360deg) rotateX(360deg);
 		opacity: 0;
-		background-color: unset;
 	}
 }

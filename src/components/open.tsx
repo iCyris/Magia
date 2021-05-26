@@ -40,6 +40,30 @@ const Open: React.FC<{
           <div className="chapter-open__title-wrap-item"></div>
         </div>
       </div>
+      <div className="chapter-open__switch">
+        <div className="chapter-open__switch-balls">
+          <span></span>
+          <span></span>
+        </div>
+        <div className="chapter-open__switch-balls">
+          <span></span>
+          <span></span>
+        </div>
+        <div className="chapter-open__switch-balls">
+          <span></span>
+          <span></span>
+        </div>
+        <div className="chapter-open__switch-balls">
+          <span></span>
+          <span></span>
+        </div>
+        <div
+          className="chapter-open__switch-rotate"
+          onAnimationEnd={() => {
+            changeChapter();
+          }}
+        ></div>
+      </div>
     </div>
   );
 };
