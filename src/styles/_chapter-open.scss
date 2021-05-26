@@ -2,7 +2,66 @@
   background-color: $theme-gray;
 }
 
-$chapter-open-title-size: 32vmin;
+.chapter-open__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  .chapter-open__bg-group1, .chapter-open__bg-group2 {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $theme-purple;
+    }
+  }
+
+  .chapter-open__bg-group1 {
+    left: 0;
+    top: 0;
+    transform: translateX(-100%) translateY(-100%);
+
+    span {
+      left: 0;
+      top: 0;
+    }
+
+    span:nth-child(1) {
+      clip-path: polygon(0 0, 0% 25%, 100% 0);
+    }
+
+    span:nth-child(2) {
+      clip-path: polygon(0 0, 0 100%, 25% 0);
+    }
+  }
+
+  .chapter-open__bg-group2 {
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%) translateY(100%);
+
+    span {
+      right: 0;
+      bottom: 0;
+    }
+
+    span:nth-child(1) {
+      clip-path: polygon(75% 100%, 100% 100%, 100% 0%);
+    }
+
+    span:nth-child(2) {
+      clip-path: polygon(0 100%, 100% 100%, 100% 75%);
+    }
+  }
+}
+
+$chapter-open-title-size: 20vmin;
 .chapter-open__title {
   width: $chapter-open-title-size;
   height: $chapter-open-title-size * 2;
@@ -28,10 +87,39 @@ $chapter-open-title-size: 32vmin;
     text-align: center;
     vertical-align: middle;
     line-height: $chapter-open-title-size;
-    color: #fff;
-    font-size: 40px;
+    color: $theme-purple;
+    font-size: 80px;
     background-color: $theme-gray;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 80%;
 
     // animation: test-show 1s ease forwards;
   }
+
+  .title-mo {
+    background-image: url('/img/chapter-open-title-1.svg');
+  }
+
+  .title-fa  {
+    background-image: url('/img/chapter-open-title-2.svg');
+  }
+
+  .title-nv {
+    background-image: url('/img/chapter-open-title-3.svg');
+  }
+}
+
+
+/* animations */
+.chapter-open__bg-group1 {
+  animation: chapter-open__bg-group1-in 1s ease forwards;
+}
+
+.chapter-open__bg-group2 {
+  animation: chapter-open__bg-group2-in 1s ease forwards;
+}
+
+.title-fa {
+  animation: test-out 2s ease forwards 1s;
 }

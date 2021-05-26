@@ -17,11 +17,11 @@ const Open: React.FC<{
       </div>
       <div className="chapter-open__title">
         <div className="chapter-open__title-group">
-          <span>魔</span>
+          <span className="title-mo"></span>
         </div>
         <div className="chapter-open__title-group">
-          <span>女</span>
-          <span>法</span>
+          <span className="title-nv"></span>
+          <span className="title-fa"></span>
         </div>
       </div>
     </div>
