@@ -1,0 +1,167 @@
+.chapter-home {
+  background-color: $theme-bg-color-1;
+}
+
+.chapter-home-bg-color-yellow {
+  background-color: $theme-yellow;
+}
+.chapter-home-bg-color-red {
+  background-color: $theme-red;
+}
+.chapter-home-bg-color-blue {
+  background-color: $theme-blue;
+}
+.chapter-home-bg-color-pink {
+  background-color: $theme-pink;
+}
+.chapter-home-bg-color-purple {
+  background-color: $theme-purple;
+}
+
+.chapter-home-border-color-yellow {
+  border-color: $theme-yellow;
+}
+.chapter-home-border-color-red {
+  border-color: $theme-red;
+}
+.chapter-home-border-color-blue {
+  border-color: $theme-blue;
+}
+.chapter-home-border-color-pink {
+  border-color: $theme-pink;
+}
+.chapter-home-border-color-purple {
+  border-color: $theme-purple;
+}
+
+.chapter-home__wrap {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  width: 96%;
+  height: 96%;
+  overflow: hidden;
+}
+
+.chapter-home__frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.chapter-home__frame-group {
+  position: absolute;
+
+  $span-line-size: 4px;
+  span {
+    display: block;
+    position: absolute;
+    
+  }
+  .chapter-home__frame-line1 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $span-line-size;
+  }
+  .chapter-home__frame-line2 {
+    top: 0;
+    left: 0;
+    width: $span-line-size;
+    height: 100%;
+  }
+  .chapter-home__frame-line3 {
+    top: 0;
+    right: 0;
+    width: $span-line-size;
+    height: 100%;
+  }
+  .chapter-home__frame-line4 {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $span-line-size;
+  }
+}
+
+.chapter-home__frame-group1 {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.chapter-home__frame-group2 {
+  width: 96%;
+  height: 96%;
+  left: 2%;
+  top: 2%;
+  overflow: hidden;
+}
+
+.chapter-home__rings {
+  $size: 160vmin;
+  position: absolute;
+  width: $size;
+  height: $size;
+  left: calc(50% - #{$size} / 2);
+  top: calc(50% - #{$size} / 2);
+
+  .chapter-home__rings-decoration, .chapter-home__rings-main {
+    border-radius: 50%;
+    border-width: 2px;
+  }
+  .chapter-home__rings-decoration {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-style: solid; 
+  }
+  .chapter-home__rings-main {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    width: 96%;
+    height: 96%;
+    border-style: dashed;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      left: 25%;
+      top: 25%;
+      border-radius: 50%;
+      opacity: 0.2;
+      background-image: url('/img/character-yellow.png');
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: bottom calc(10%);
+      background-size: 100%;
+      box-shadow:0 0 50px 30px #ffffff inset;
+    }
+  }
+}
+
+.chaper-home-yellow {
+  .chapter-home__rings-main::after { background-image: url('/img/character-yellow.png'); }
+}
+.chaper-home-red {
+  .chapter-home__rings-main::after { background-image: url('/img/character-red.png'); }
+}
+.chaper-home-blue {
+  .chapter-home__rings-main::after { background-image: url('/img/character-blue.png'); }
+}
+.chaper-home-pink {
+  .chapter-home__rings-main::after { background-image: url('/img/character-pink.png'); }
+}
+.chaper-home-purple {
+  .chapter-home__rings-main::after { background-image: url('/img/character-purple.png'); }
+}

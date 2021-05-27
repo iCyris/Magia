@@ -15,6 +15,9 @@ const Chapter2: React.FC<{
           {/* あなたの願いは何ですか？ */}
         </div>
       </div>
+      <div className="chapter2__switch-group1">
+        <span></span>
+      </div>
     </div>
   );
 };
