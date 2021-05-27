@@ -9,6 +9,21 @@ export enum Etheme {
 }
 const ChapterHome: React.FC<{}> = ({}) => {
   const [currentTheme, setCurrentTheme] = useState<Etheme>(Etheme.yellow);
+  const changeTheme = () => {
+    if (currentTheme === Etheme.yellow) {
+      setCurrentTheme(Etheme.red)
+    } else if (currentTheme === Etheme.red) {
+      setCurrentTheme(Etheme.blue)
+    } else if (currentTheme === Etheme.blue) {
+      setCurrentTheme(Etheme.pink)
+    } else if (currentTheme === Etheme.pink) {
+      setCurrentTheme(Etheme.purple)
+    } else if (currentTheme === Etheme.purple) {
+      setCurrentTheme(Etheme.yellow)
+    } else {
+      setCurrentTheme(Etheme.yellow)
+    }
+  }
 
   const renderBackgroundColorClassName = (
     theme: Etheme,
@@ -64,10 +79,15 @@ const ChapterHome: React.FC<{}> = ({}) => {
                 )}`}
               ></div>
               <div
-                className={`chapter-home__rings-main ${renderBackgroundColorClassName(
+                className={`chapter-home__rings-main chapter-home__rings-main-${currentTheme} ${renderBackgroundColorClassName(
                   currentTheme,
                   "border"
                 )}`}
+                onAnimationEnd={(e) => {
+                  if (e?.animationName === "chapter-home-character-hide") {
+                    changeTheme();
+                  }
+                }}
               ></div>
             </div>
             {renderLineSpans()}

@@ -140,8 +140,7 @@
       left: calc(50% - #{$size} / 2);
       top: calc(50% - #{$size} / 2);
       border-radius: 50%;
-      opacity: 0.3;
-      background-image: url('/img/character-yellow.png');
+      opacity: 0;
       background-repeat: no-repeat;
       background-position-x: center;
       background-position-y: bottom calc(10%);
@@ -152,17 +151,27 @@
 }
 
 .chaper-home-yellow {
-  .chapter-home__rings-main::after { background-image: url('/img/character-yellow.png'); }
+  .chapter-home__rings-main-yellow::after { background-image: url('/img/character-yellow.png'); }
 }
 .chaper-home-red {
-  .chapter-home__rings-main::after { background-image: url('/img/character-red.png'); }
+  .chapter-home__rings-main-red::after { background-image: url('/img/character-red.png'); }
 }
 .chaper-home-blue {
-  .chapter-home__rings-main::after { background-image: url('/img/character-blue.png'); }
+  .chapter-home__rings-main-blue::after { background-image: url('/img/character-blue.png'); }
 }
 .chaper-home-pink {
-  .chapter-home__rings-main::after { background-image: url('/img/character-pink.png'); }
+  .chapter-home__rings-main-pink::after { background-image: url('/img/character-pink.png'); }
 }
 .chaper-home-purple {
-  .chapter-home__rings-main::after { background-image: url('/img/character-purple.png'); }
+  .chapter-home__rings-main-purple::after { background-image: url('/img/character-purple.png'); }
+}
+
+/* Animations */
+.chapter-home__rings-main-yellow::after,
+.chapter-home__rings-main-red::after,
+.chapter-home__rings-main-blue::after,
+.chapter-home__rings-main-pink::after,
+.chapter-home__rings-main-purple::after
+{
+  animation: chapter-home-character-show 1s ease forwards, chapter-home-character-hide 1s ease 2s forwards;
 }

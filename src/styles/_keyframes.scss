@@ -308,3 +308,23 @@
     }
   }
 }
+
+
+/* chapter-home-keyframes */
+@keyframes chapter-home-character-show {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.3;
+	}
+}
+
+@keyframes chapter-home-character-hide {
+	0% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 0;
+	}
+}
