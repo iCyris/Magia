@@ -299,27 +299,12 @@
 	}
 }
 
-
-@keyframes test-show {
-	from {
-		transform: translateY(-70vh) rotateY(0) rotateX(0);
-		opacity: 0
-	}
-
-	to {
-		transform: translateY(0) rotateY(360deg) rotateX(360deg);
-		opacity: .7
-	}
-}
-
-@keyframes test-out {
-	from {
-		transform: translateY(0) rotateY(0) rotateX(0);
-		opacity: .7;
-	}
-
-	to {
-		transform: translateY(70vh) rotateY(360deg) rotateX(360deg);
-		opacity: 0;
-	}
+/* chapter-2-keyframes */
+@keyframes chaprer2__noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      clip: rect(random(150) + px, 9999px, random(140) + px, 0);
+    }
+  }
 }

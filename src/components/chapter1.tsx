@@ -17,6 +17,9 @@ const Chapter1: React.FC<{
         <span onAnimationEnd={e => {
           if (e?.animationName?.includes('hidden')) {
             updateColorIndex();
+            if (e?.animationName === 'chapter1__word-5-hidden') {
+              changeChapter();
+            }
           }
         }} /><span /><span /><span />
         <span /><span /><span /><span />
