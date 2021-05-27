@@ -8,7 +8,7 @@ export enum Etheme {
   purple = "purple",
 }
 const ChapterHome: React.FC<{}> = ({}) => {
-  const [currentTheme, setCurrentTheme] = useState<Etheme>(Etheme.purple);
+  const [currentTheme, setCurrentTheme] = useState<Etheme>(Etheme.yellow);
 
   const renderBackgroundColorClassName = (
     theme: Etheme,

@@ -132,14 +132,15 @@
     overflow: hidden;
 
     &::after {
+      $size: 70%;
       content: "";
       position: absolute;
-      width: 50%;
-      height: 50%;
-      left: 25%;
-      top: 25%;
+      width: $size;
+      height: $size;
+      left: calc(50% - #{$size} / 2);
+      top: calc(50% - #{$size} / 2);
       border-radius: 50%;
-      opacity: 0.2;
+      opacity: 0.3;
       background-image: url('/img/character-yellow.png');
       background-repeat: no-repeat;
       background-position-x: center;
