@@ -21,8 +21,9 @@ const Chapter2: React.FC<{
         <span /><span /><span /><span /><span />
       </div>
       <div className="chapter2__switch-group2">
-        <span /><span /><span /><span />
-        <div className="chapter2__switch-group2-water"></div>
+        <div className="chapter2__switch-group2-stone"></div>
+        <span className="chapter2__switch-group2-mask chapter2__switch-group2-mask-1"></span>
+        <span className="chapter2__switch-group2-mask chapter2__switch-group2-mask-2"></span>
       </div>
     </div>
   );

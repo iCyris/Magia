@@ -117,6 +117,24 @@
 	}
 }
 
+@keyframes rotate-n90-0 {
+	0% {
+		transform: rotate(-90deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes rotate-90-0 {
+	0% {
+		transform: rotate(90deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
 @keyframes common__bg-color-change-1 {
 	from {
 		background-color: $theme-yellow;
@@ -357,6 +375,30 @@
   }
 }
 
+@keyframes chapter2__switch-group2-stone-in {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(-10vh);
+	}
+}
+
+
+@keyframes chapter2__switch-group2-stone-out {
+	0% {
+		opacity: 1;
+		transform: translateY(-10vh);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(70vh);;
+	}
+}
+
+
 
 /* chapter-home-keyframes */
 @keyframes chapter-home-character-show {
@@ -364,13 +406,13 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 0.6;
+		opacity: 0.3;
 	}
 }
 
 @keyframes chapter-home-character-hide {
 	0% {
-		opacity: 0.6;
+		opacity: 0.3;
 	}
 	100% {
 		opacity: 0;
