@@ -67,6 +67,10 @@ const Chapter3: React.FC<{
         <div className="chapter3-character-mask chapter3-character-mask1"></div>
         <div className="chapter3-character-mask chapter3-character-mask2"></div>
       </div>
+      
+      <div className="chapter3-close-box">
+        <span /><span /><span /><span onAnimationEnd={changeChapter} />
+      </div>
     </div>
   )
 }
