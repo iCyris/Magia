@@ -169,6 +169,31 @@ $chapter2__word-box-size: 20vmin;
   left: 0;
   top: 0;
   display: flex;
+
+  .chapter2__switch-group2-stone-wave {
+    $size: 80vmin;
+    width: $size;
+    height: $size;
+    position: absolute;
+    left: calc(50% - #{$size} / 2);
+    top: calc(50% - #{$size} / 2);
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $theme-red;
+      transform: scale(0);
+    }
+
+  }
   
   .chapter2__switch-group2-stone {
     $size: 10vmin;
@@ -202,6 +227,26 @@ $chapter2__word-box-size: 20vmin;
   }
 }
 
+.chapter2__open_word-shine1 {
+  position: absolute;
+  width: 10vmin;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  left: 10vmin;
+  top: 20vmin;
+}
+
+.chapter2__open_word-shine2 {
+  position: absolute;
+  width: 20vmin;
+  height: 6px;
+  background-color: #fff;
+  opacity: 0;
+  right: 10vmin;
+  bottom: 20vmin;
+}
+
 /* Animations */
 .chapter2__open-mask {
   span:nth-child(1) {
@@ -227,17 +272,25 @@ $chapter2__word-box-size: 20vmin;
   }
 }
 
+.chapter2__open_word-shine1 {
+  animation: fadein .1s linear 1.4s alternate 2 forwards;
+}
+
+.chapter2__open_word-shine2 {
+  animation: fadein .1s linear 1.6s alternate 2 forwards;
+}
+
 .chapter2__open_word-mask {
   &::before {
-    animation: top-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) 1s forwards;
+    animation: top-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) .8s forwards;
   }
   &::after {
-    animation: bottom-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) 1s forwards;
+    animation: bottom-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) .8s forwards;
   }
 }
 
 .chapter2__switch-group1 {
-  $base-time: 1.4;
+  $base-time: 1.2;
   @for $i from 1 through 10 {
     span:nth-child(#{$i}) {
       animation: left-slide-in 4s cubic-bezier(1,.01,0,1) #{$base-time + ($i - 1) * 0.1}s forwards;
@@ -246,15 +299,23 @@ $chapter2__word-box-size: 20vmin;
 }
 
 .chapter2__switch-group2-stone {
-  $base-delay: 4.8;
+  $base-delay: 4.6;
   animation: 
   chapter2__switch-group2-stone-in .4s cubic-bezier(.09,.57,.36,1.05) #{$base-delay}s forwards,
   chapter2__switch-group2-stone-out .4s cubic-bezier(1,.04,1,.63) #{$base-delay + 0.4}s forwards;
 }
 
+.chapter2__switch-group2-stone-wave {
+  animation: scale0-1 .4s ease 4.6s forwards;
+
+  &::after {
+    animation: scale0-1 .4s ease 4.7s forwards;
+  }
+}
+
 .chapter2__switch-group2-mask-1 {
-  animation: rotate-n90-0 .4s ease 5.6s forwards;
+  animation: rotate-n90-0 .4s ease 5.4s forwards;
 }
 .chapter2__switch-group2-mask-2 {
-  animation: rotate-90-0 .4s ease 5.6s forwards;
+  animation: rotate-90-0 .4s ease 5.4s forwards;
 }
