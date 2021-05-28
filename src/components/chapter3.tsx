@@ -34,18 +34,20 @@ const Chapter3: React.FC<{
         <span /><span /><span /><span />
         <span /><span /><span /><span />
       </div>
-      <div className="chapter3-character-box chapter3-character-box2">
-        
+      <div className="chapter3-character-box chapter3-character-box3">
+      <div className="chapter3-character chapter3-character3"></div>
+      <div className="chapter3-character-mask chapter3-character-mask1"></div>
+      <div className="chapter3-character-mask chapter3-character-mask2"></div>
       </div>
 
-      {/* part2 */}
-      {/* <div className="chapter3-open2">
+      {/* part4 */}
+      <div className="chapter3-open4">
         <span /><span /><span /><span />
         <span /><span /><span /><span />
       </div>
       <div className="chapter3-character-box chapter3-character-box2">
         
-      </div> */}
+      </div>
 
       {/* part2 */}
       {/* <div className="chapter3-open2">

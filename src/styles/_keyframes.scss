@@ -81,12 +81,30 @@
 	}
 }
 
+@keyframes left-slide-out {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
 @keyframes bottom-slide-out {
 	0% {
 		transform: translateY(0%);
 	}
 	100% {
 		transform: translateY(100%);
+	}
+}
+
+@keyframes right-slide-in {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }
 
@@ -150,6 +168,24 @@
 	}
 	100% {
 		transform: rotate(0deg);
+	}
+}
+
+@keyframes scaleY0-1 {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes scaleX0-1 {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
 	}
 }
 

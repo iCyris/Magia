@@ -61,7 +61,7 @@
 
   .chapter3-character1 {
     background-image: url('/img/character-blue.png');
-    background-position-y: top calc(10%);
+    background-position-y: calc(5%);
     background-size: 30%;
     background-color: #fff;
   
@@ -89,15 +89,13 @@
   }
 }
 .chapter3-character-box2 {
-  // transform: rotate(-5deg);
-
   .chapter3-character-mask {
     background-color: $theme-red;
   }
 
   .chapter3-character2 {
     background-image: url('/img/character-red.png');
-    background-position-y: top calc(10%);
+    background-position-y: calc(10%);
     background-size: 30%;
     background-color: #fff;
   
@@ -107,6 +105,50 @@
   }
 }
 // part3
+.chapter3-open3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+
+  span {
+    width: 12.5%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    background-color: $theme-yellow;
+    transform-origin: center;
+    transform: scaleY(0);
+  }
+}
+.chapter3-character-box3 {
+  .chapter3-character-mask {
+    width: 100%;
+    height: 100%;
+    background-color: $theme-yellow;
+  }
+
+  .chapter3-character-mask1 {
+    transform: translateX(0);
+  }
+
+  .chapter3-character-mask2 {
+    transform: translateX(100%);
+  }
+
+  .chapter3-character3 {
+    background-image: url('/img/character-yellow.png');
+    background-position-y: calc(16%);
+    background-size: 30%;
+    background-color: #fff;
+  
+    @media screen and (max-width: 750px) {
+      background-size: 60%;
+    }
+  }
+}
 
 /* Animations */
 // group1
@@ -152,5 +194,28 @@
 
   .chapter3-character-mask2 {
     animation: bottom-slide-out #{$animation-time}s ease #{$animation-delay}s forwards, bottom-slide-in #{$animation-time - .1}s ease #{$animation-delay + 0.2 + $animation-time}s forwards;
+  }
+}
+
+// group3
+.chapter3-open3 {
+  @for $i from 1 through 8 {
+    span:nth-child(#{$i}) {
+      animation: scaleY0-1 .4s ease #{($i - 1) * 0.1 + 4.8}s forwards;
+    }
+  }
+}
+.chapter3-character-box3 {
+  $animation-time: .6;
+  $animation-delay: 5.9;
+  
+  animation: fadein .1s ease #{$animation-delay}s forwards;
+
+  .chapter3-character-mask1 {
+    animation: left-slide-out #{$animation-time}s ease #{$animation-delay}s forwards;
+  }
+
+  .chapter3-character-mask2 {
+    animation: right-slide-in #{$animation-time}s ease #{$animation-delay + .7}s forwards;
   }
 }
