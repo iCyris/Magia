@@ -233,15 +233,15 @@ $chapter2__word-box-size: 20vmin;
 
 .chapter2__open_word-mask {
   &::before {
-    animation: top-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) .8s forwards;
+    animation: top-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) 1s forwards;
   }
   &::after {
-    animation: bottom-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) .8s forwards;
+    animation: bottom-slide-in 6.8s cubic-bezier(.43,.05,0,1.08) 1s forwards;
   }
 }
 
 .chapter2__switch-group1 {
-  $base-time: 0;
+  $base-time: 0.1;
   @for $i from 1 through 10 {
     span:nth-child(#{$i}) {
       animation: left-slide-in 6s cubic-bezier(1,.01,0,1) #{$base-time + ($i - 1) * 0.1}s forwards;
