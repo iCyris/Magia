@@ -16,7 +16,8 @@ const Chapter2: React.FC<{
         </div>
       </div>
       <div className="chapter2__switch-group1">
-        <span></span>
+        <span /><span /><span /><span /><span />
+        <span /><span /><span /><span /><span />
       </div>
     </div>
   );
