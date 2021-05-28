@@ -45,12 +45,30 @@
 	}
 }
 
+@keyframes top-slide-out {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(-100%);
+	}
+}
+
 @keyframes bottom-slide-in {
 	0% {
 		transform: translateY(100%);
 	}
 	100% {
 		transform: translateY(0%);
+	}
+}
+
+@keyframes bottom-slide-out {
+	0% {
+		transform: translateY(0%);
+	}
+	100% {
+		transform: translateY(100%);
 	}
 }
 
@@ -398,6 +416,7 @@
 	}
 }
 
+/* chapter-3-keyframes */
 
 
 /* chapter-home-keyframes */
