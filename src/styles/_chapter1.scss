@@ -102,16 +102,16 @@ $word-box-size: 20vmin;
 
 /* Animations */
 .chapter1-color-1 {
-  animation: chapter1__bg-change-1 1s ease forwards;
+  animation: common__bg-color-change-1 1s ease forwards;
 }
 .chapter1-color-2 {
-  animation: chapter1__bg-change-2 1s ease forwards;
+  animation: common__bg-color-change-2 1s ease forwards;
 }
 .chapter1-color-3 {
-  animation: chapter1__bg-change-3 1s ease forwards;
+  animation: common__bg-color-change-3 1s ease forwards;
 }
 .chapter1-color-4 {
-  animation: chapter1__bg-change-4 1s ease forwards;
+  animation: common__bg-color-change-4 1s ease forwards;
 }
 
 $chapter1__word-animation-time-gap: 4;

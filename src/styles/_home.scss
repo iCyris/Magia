@@ -1,45 +1,92 @@
+$color-animation-change-time: 2s;
 .chapter-home {
   background-color: $theme-bg-color-1;
 }
 
 .chapter-home-bg-color-yellow {
-  background-color: $theme-yellow;
+  &::after {
+    background-color: $theme-yellow;
+    animation: common__bg-color-change-5 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-bg-color-red {
-  background-color: $theme-red;
+  &::after {
+    background-color: $theme-red;
+    animation: common__bg-color-change-1 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-bg-color-blue {
-  background-color: $theme-blue;
+  &::after {
+    background-color: $theme-blue;
+    animation: common__bg-color-change-2 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-bg-color-pink {
-  background-color: $theme-pink;
+  &::after {
+    background-color: $theme-pink;
+    animation: common__bg-color-change-3 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-bg-color-purple {
-  background-color: $theme-purple;
+  &::after {
+    background-color: $theme-purple;
+    animation: common__bg-color-change-4 $color-animation-change-time ease forwards;
+  }
 }
 
 .chapter-home-border-color-yellow {
-  border-color: $theme-yellow;
+  &, &::after {
+    border-color: $theme-yellow;
+    animation: common__border-color-change-5 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-border-color-red {
-  border-color: $theme-red;
+  &, &::after {
+    border-color: $theme-red;
+    animation: common__border-color-change-1 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-border-color-blue {
-  border-color: $theme-blue;
+  &, &::after {
+    border-color: $theme-blue;
+    animation: common__border-color-change-2 $color-animation-change-time ease forwards;
+  }
 }
 .chapter-home-border-color-pink {
-  border-color: $theme-pink;
+  &, &::after {
+    border-color: $theme-pink;
+    animation: common__border-color-change-3 $color-animation-change-time ease forwards;
+  };
 }
 .chapter-home-border-color-purple {
-  border-color: $theme-purple;
+  &, &::after {
+    border-color: $theme-purple;
+    animation: common__border-color-change-4 $color-animation-change-time ease forwards;
+  }
+}
+
+.chapter-home-init-true {
+  .chapter-home-bg-color-yellow {
+    &::after {
+      background-color: $theme-yellow;
+      animation: fadein $color-animation-change-time ease forwards;
+    }
+  }
+
+  .chapter-home-border-color-yellow {
+    & {
+      animation: fadein $color-animation-change-time ease forwards;
+    }
+  }
 }
 
 .chapter-home__wrap {
+  $gap: 4vmin;
   position: absolute;
-  left: 2%;
-  top: 2%;
-  width: 96%;
-  height: 96%;
+  left: calc(#{$gap} / 2);
+  top: calc(#{$gap} / 2);
+  width: calc(100% - #{$gap});
+  height: calc(100% - #{$gap});
   overflow: hidden;
 }
 
@@ -58,7 +105,18 @@
   span {
     display: block;
     position: absolute;
-    
+    background-color: unset;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
   .chapter-home__frame-line1 {
     top: 0;
@@ -95,10 +153,11 @@
 }
 
 .chapter-home__frame-group2 {
-  width: 96%;
-  height: 96%;
-  left: 2%;
-  top: 2%;
+  $gap: 4vmin;
+  width: calc(100% - #{$gap});
+  height: calc(100% - #{$gap});
+  left: calc(#{$gap} / 2);
+  top: calc(#{$gap} / 2);
   overflow: hidden;
 }
 
@@ -173,5 +232,21 @@
 .chapter-home__rings-main-pink::after,
 .chapter-home__rings-main-purple::after
 {
-  animation: chapter-home-character-show 1s ease forwards, chapter-home-character-hide 1s ease 2s forwards;
+  animation: chapter-home-character-show 2s ease forwards, chapter-home-character-hide 2s ease 5s forwards;
+}
+
+.chapter-home-border-color-yellow {
+  border-color: $theme-yellow;
+}
+.chapter-home-border-color-red {
+  border-color: $theme-red;
+}
+.chapter-home-border-color-blue {
+  border-color: $theme-blue;
+}
+.chapter-home-border-color-pink {
+  border-color: $theme-pink;
+}
+.chapter-home-border-color-purple {
+  border-color: $theme-purple;
 }

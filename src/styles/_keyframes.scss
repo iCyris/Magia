@@ -117,6 +117,86 @@
 	}
 }
 
+@keyframes common__bg-color-change-1 {
+	from {
+		background-color: $theme-yellow;
+	} to {
+		background-color: $theme-red;
+	}
+}
+
+@keyframes common__bg-color-change-2 {
+	from {
+		background-color: $theme-red;
+	} to {
+		background-color: $theme-blue;
+	}
+}
+
+@keyframes common__bg-color-change-3 {
+	from {
+		background-color: $theme-blue;
+	} to {
+		background-color: $theme-pink;
+	}
+}
+
+@keyframes common__bg-color-change-4 {
+	from {
+		background-color: $theme-pink;
+	} to {
+		background-color: $theme-purple;
+	}
+}
+
+@keyframes common__bg-color-change-5 {
+	from {
+		background-color: $theme-purple;
+	} to {
+		background-color: $theme-yellow;
+	}
+}
+
+@keyframes common__border-color-change-1 {
+	from {
+		border-color: $theme-yellow;
+	} to {
+		border-color: $theme-red;
+	}
+}
+
+@keyframes common__border-color-change-2 {
+	from {
+		border-color: $theme-red;
+	} to {
+		border-color: $theme-blue;
+	}
+}
+
+@keyframes common__border-color-change-3 {
+	from {
+		border-color: $theme-blue;
+	} to {
+		border-color: $theme-pink;
+	}
+}
+
+@keyframes common__border-color-change-4 {
+	from {
+		border-color: $theme-pink;
+	} to {
+		border-color: $theme-purple;
+	}
+}
+
+@keyframes common__border-color-change-5 {
+	from {
+		border-color: $theme-purple;
+	} to {
+		border-color: $theme-yellow;
+	}
+}
+
 /* chapter-open-keyframes */
 @keyframes chapter-open__bg-group1-in {
 	0% {
@@ -152,38 +232,6 @@
 }
 
 /* chapter-1-keyframes */
-@keyframes chapter1__bg-change-1 {
-	from {
-		background-color: $theme-yellow;
-	} to {
-		background-color: $theme-red;
-	}
-}
-
-@keyframes chapter1__bg-change-2 {
-	from {
-		background-color: $theme-red;
-	} to {
-		background-color: $theme-blue;
-	}
-}
-
-@keyframes chapter1__bg-change-3 {
-	from {
-		background-color: $theme-blue;
-	} to {
-		background-color: $theme-pink;
-	}
-}
-
-@keyframes chapter1__bg-change-4 {
-	from {
-		background-color: $theme-pink;
-	} to {
-		background-color: $theme-purple;
-	}
-}
-
 @keyframes chapter1__word-1-show {
 	from {
 		transform: translateY(-70vh) rotateY(0) rotateX(0);
@@ -316,13 +364,13 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 0.3;
+		opacity: 0.6;
 	}
 }
 
 @keyframes chapter-home-character-hide {
 	0% {
-		opacity: 0.3;
+		opacity: 0.6;
 	}
 	100% {
 		opacity: 0;

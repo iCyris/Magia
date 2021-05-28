@@ -7,7 +7,7 @@ import ChapterHome from './components/home';
 import './styles/index.scss'
 
 function App() {
-  const [current, setCurrent] = useState(4);
+  const [current, setCurrent] = useState(0);
   const maxCurrent = 4;
 
   const changeChapter = () => {
