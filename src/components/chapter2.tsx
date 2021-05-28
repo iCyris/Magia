@@ -14,10 +14,15 @@ const Chapter2: React.FC<{
         <div className="chapter2__open_word">
           {/* あなたの願いは何ですか？ */}
         </div>
+        <div className="chapter2__open_word-mask"></div>
       </div>
       <div className="chapter2__switch-group1">
         <span /><span /><span /><span /><span />
         <span /><span /><span /><span /><span />
+      </div>
+      <div className="chapter2__switch-group2">
+        <span /><span /><span /><span />
+        <div className="chapter2__switch-group2-water"></div>
       </div>
     </div>
   );
