@@ -241,10 +241,10 @@ $chapter2__word-box-size: 20vmin;
 }
 
 .chapter2__switch-group1 {
-  $base-time: 0.1;
+  $base-time: 1;
   @for $i from 1 through 10 {
     span:nth-child(#{$i}) {
-      animation: left-slide-in 6s cubic-bezier(1,.01,0,1) #{$base-time + ($i - 1) * 0.1}s forwards;
+      animation: left-slide-in 5s cubic-bezier(1,.01,0,1) #{$base-time + ($i - 1) * 0.1}s forwards;
     }
   }
 }
