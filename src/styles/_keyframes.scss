@@ -182,10 +182,10 @@
 
 @keyframes scaleX0-1 {
 	0% {
-		transform: scaleY(0);
+		transform: scaleX(0);
 	}
 	100% {
-		transform: scaleY(1);
+		transform: scaleX(1);
 	}
 }
 
