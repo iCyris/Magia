@@ -270,19 +270,19 @@ $color-animation-change-time: 1s;
 
 .chapter-home-links {
   $size: 4vmin;
-  @media screen and (max-width: 750px) {
-    $size: 8vmin;
-  }
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: $size;
+  
   position: absolute;
   left: 0;
   top: calc(50% - #{$size} / 2 + 18vmin);
 
-  
+  @media screen and (max-width: 750px) {
+    height: $size * 2;
+  }
 
   .chapter-home-links-icon-wrap {
     width: $size;
@@ -298,6 +298,11 @@ $color-animation-change-time: 1s;
     transform: scale(0);
     transform-origin: center center;
 
+    @media screen and (max-width: 750px) {
+      width: $size * 2;
+      height: $size * 2;
+    }
+
     &:nth-last-child(1) {
       margin-right: unset;
     }
@@ -311,6 +316,12 @@ $color-animation-change-time: 1s;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media screen and (max-width: 750px) {
+        width: $size * $magnification * 2;
+        height: $size * $magnification * 2;
+        font-size: $size * $magnification * 2;
+      }
       
       &::before {
         width: 100%;
