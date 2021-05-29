@@ -7,7 +7,9 @@ import ChapterHome from './components/home';
 import './styles/index.scss'
 
 function App() {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number>(0);
+  const [isMusicPlay, setIsMusicPlay] = useState<boolean | 'init'>('init');
+
   const maxCurrent = 4;
 
   const changeChapter = () => {
@@ -16,6 +18,14 @@ function App() {
     } else {
       setCurrent(4);
     }
+  }
+
+  const mp3url = 'https://cdn.jsdelivr.net/npm/cyris-music-cdn/Kalafina_Magia.mp3';
+  const playMusic = () => {
+    (document?.querySelector('.music-audio') as HTMLAudioElement)?.play();
+  }
+  const pauseMusic = () => {
+    (document?.querySelector('.music-audio') as HTMLAudioElement)?.pause();
   }
 
   return (
@@ -35,6 +45,24 @@ function App() {
       {
         current === 4 && <ChapterHome />
       }
+      <div className="music">
+        <span className="music-button" data-state={isMusicPlay} onClick={() => {
+          if (isMusicPlay === true) {
+            pauseMusic();
+            setIsMusicPlay(false);
+          } else {
+            playMusic();
+            setIsMusicPlay(true);
+          }
+        }}>
+          <i className="czs-music-note"></i>
+        </span>
+        <audio className="music-audio">
+          <source src={mp3url} type="audio/mpeg" />
+          <source src={mp3url} type="audio/ogg" />
+          <embed height="50" width="100" src={mp3url} />
+        </audio>
+      </div>
     </div>
   )
 }

@@ -32,3 +32,68 @@
     display: inline-block;
   }
 }
+
+.music {
+  opacity: 0;
+  animation: fadein 1s ease forwards;
+}
+.music-button {
+  $size: 4vmin;
+  position: fixed;
+  width: $size;
+  height: $size;
+  right: 6vmin;
+  top: 6vmin;
+  cursor: pointer;
+  opacity: .3;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4d4d4d;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #4d4d4d;
+    left: calc(50% - 50%);
+    top: calc(50% - 1px);
+  }
+
+  > i {
+    font-size: $size;
+  }
+
+  @media screen and (max-width: 750px) {
+    $magnification: 1.6;
+    width: $size * $magnification;
+    height: $size * $magnification;
+
+    > i {
+      font-size: $size * $magnification;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.music-button[data-state="init"] {
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+.music-button[data-state="true"] {
+  &::after {
+    animation: music-state-change-to-true .3s ease forwards;
+  }
+}
+.music-button[data-state="false"] {
+  &::after {
+    animation: music-state-change-to-false .3s ease forwards;
+  }
+}

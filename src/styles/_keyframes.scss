@@ -480,3 +480,21 @@
 	80% { transform: scale(1.03); }
 	100% { transform: scale(1); }
 }
+
+@keyframes music-state-change-to-true {
+	0% {
+		transform: rotate(45deg) translate(0, 0);
+	}
+	100% {
+		transform: rotate(45deg) translate(120%, 120%);
+	}
+}
+
+@keyframes music-state-change-to-false {
+	0% {
+		transform: rotate(45deg) translate(-120%, -120%);
+	}
+	100% {
+		transform: rotate(45deg) translate(0, 0);
+	}
+}
