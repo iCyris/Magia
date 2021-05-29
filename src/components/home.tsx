@@ -89,7 +89,9 @@ const ChapterHome: React.FC<{}> = ({}) => {
             changeTheme();
           }
         }}
-      ></div>
+      >
+        <div className="home-logo"></div>
+      </div>
     );
   };
 
@@ -106,12 +108,6 @@ const ChapterHome: React.FC<{}> = ({}) => {
           </div>
           <div className="chapter-home__frame-group chapter-home__frame-group2">
             <div className="chapter-home__rings">
-              {/* <div
-                className={`chapter-home__rings-decoration ${renderBackgroundColorClassName(
-                  currentTheme,
-                  "border"
-                )}`}
-              ></div> */}
               {currentTheme === Etheme.yellow && renderDecorationRing(Etheme.yellow)}
               {currentTheme === Etheme.red && renderDecorationRing(Etheme.red)}
               {currentTheme === Etheme.blue && renderDecorationRing(Etheme.blue)}
@@ -124,9 +120,17 @@ const ChapterHome: React.FC<{}> = ({}) => {
               {currentTheme === Etheme.pink && renderMainRing(Etheme.pink)}
               {currentTheme === Etheme.purple && renderMainRing(Etheme.purple)}
             </div>
-            {renderLineSpans()}
+            {currentTheme === Etheme.yellow && renderLineSpans()}
+            {currentTheme === Etheme.red && renderLineSpans()}
+            {currentTheme === Etheme.blue && renderLineSpans()}
+            {currentTheme === Etheme.pink && renderLineSpans()}
+            {currentTheme === Etheme.purple && renderLineSpans()}
           </div>
         </div>
+      </div>
+      <div className="chapter-home-links">
+        <a className="chapter-home-links-icon-wrap" title="Profile" href="https://cyris.moe" target="_blank"><i className="czs-game"></i></a>
+        <a className="chapter-home-links-icon-wrap" title="GitHub" href="https://github.com/iCyris" target="_blank"><i className="czs-github-logo"></i></a>
       </div>
     </div>
   );

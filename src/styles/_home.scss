@@ -1,6 +1,9 @@
-$color-animation-change-time: 2s;
+$color-animation-change-time: 1s;
 .chapter-home {
   background-color: $theme-bg-color-1;
+  background-image: url('/img/texture.png');
+  background-repeat: repeat;
+  background-size: 8rem;
 }
 
 .chapter-home-bg-color-yellow {
@@ -150,6 +153,19 @@ $color-animation-change-time: 2s;
   left: 0;
   top: 0;
   overflow: hidden;
+
+  .chapter-home__frame-line1 {
+    transform: translateX(100%);
+  }
+  .chapter-home__frame-line2 {
+    transform: translateY(-100%);
+  }
+  .chapter-home__frame-line3 {
+    transform: translateY(100%);
+  }
+  .chapter-home__frame-line4 {
+    transform: translateX(-100%);
+  }
 }
 
 .chapter-home__frame-group2 {
@@ -159,6 +175,19 @@ $color-animation-change-time: 2s;
   left: calc(#{$gap} / 2);
   top: calc(#{$gap} / 2);
   overflow: hidden;
+
+  .chapter-home__frame-line1 {
+    transform: translateX(-100%);
+  }
+  .chapter-home__frame-line2 {
+    transform: translateY(100%);
+  }
+  .chapter-home__frame-line3 {
+    transform: translateY(-100%);
+  }
+  .chapter-home__frame-line4 {
+    transform: translateX(100%);
+  }
 }
 
 .chapter-home__rings {
@@ -202,7 +231,7 @@ $color-animation-change-time: 2s;
       opacity: 0;
       background-repeat: no-repeat;
       background-position-x: center;
-      background-position-y: bottom calc(10%);
+      background-position-y: calc(10%);
       background-size: 100%;
       box-shadow:0 0 50px 30px #ffffff inset;
     }
@@ -225,14 +254,70 @@ $color-animation-change-time: 2s;
   .chapter-home__rings-main-purple::after { background-image: url('/img/character-purple.png'); }
 }
 
-/* Animations */
-.chapter-home__rings-main-yellow::after,
-.chapter-home__rings-main-red::after,
-.chapter-home__rings-main-blue::after,
-.chapter-home__rings-main-pink::after,
-.chapter-home__rings-main-purple::after
-{
-  animation: chapter-home-character-show 2s ease forwards, chapter-home-character-hide 2s ease 5s forwards;
+.home-logo {
+  position: absolute;
+  width: 100%;
+  height: 20vmin;
+  left: 0;
+  top: calc(50% - 10vmin);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-image: url("/img/logo.svg");
+  background-color: rgba(255,255,255,.3);
+  z-index: 10;
+}
+
+.chapter-home-links {
+  $size: 4vmin;
+  @media screen and (max-width: 750px) {
+    $size: 8vmin;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: $size;
+  position: absolute;
+  left: 0;
+  top: calc(50% - #{$size} / 2 + 18vmin);
+
+  
+
+  .chapter-home-links-icon-wrap {
+    width: $size;
+    height: $size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    border-radius: 50%;
+    background-color: rgba(77, 77, 77, .9);
+    color: white;
+    cursor: pointer;
+    transform: scale(0);
+    transform-origin: center center;
+
+    &:nth-last-child(1) {
+      margin-right: unset;
+    }
+
+    > i {
+      $magnification: 0.65;
+      display: inline-block;
+      width: $size * $magnification;
+      height: $size * $magnification;
+      font-size: $size * $magnification;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &::before {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
 
 .chapter-home-border-color-yellow {
@@ -249,4 +334,52 @@ $color-animation-change-time: 2s;
 }
 .chapter-home-border-color-purple {
   border-color: $theme-purple;
+}
+
+/* Animations */
+$line-animation-time: .4;
+.chapter-home__frame-group1 {
+  .chapter-home__frame-line2 {
+    animation: top-slide-in #{$line-animation-time}s linear forwards;
+  }
+  .chapter-home__frame-line1 {
+    animation: right-slide-in #{$line-animation-time}s linear #{$line-animation-time}s forwards;
+  }
+  .chapter-home__frame-line3 {
+    animation: bottom-slide-in #{$line-animation-time}s linear forwards;
+  }
+  .chapter-home__frame-line4 {
+    animation: left-slide-in #{$line-animation-time}s linear #{$line-animation-time}s forwards;
+  }
+}
+.chapter-home__frame-group2 {
+  .chapter-home__frame-line1 {
+    animation: right-slide-in #{$line-animation-time}s linear forwards;
+  }
+  .chapter-home__frame-line2 {
+    animation: top-slide-in #{$line-animation-time}s linear #{$line-animation-time}s forwards;
+  }
+  .chapter-home__frame-line4 {
+    animation: left-slide-in #{$line-animation-time}s linear forwards;
+  }
+  .chapter-home__frame-line3 {
+    animation: bottom-slide-in #{$line-animation-time}s linear #{$line-animation-time}s forwards;
+  }
+}
+.chapter-home__rings-main-yellow::after,
+.chapter-home__rings-main-red::after,
+.chapter-home__rings-main-blue::after,
+.chapter-home__rings-main-pink::after,
+.chapter-home__rings-main-purple::after
+{
+  animation: chapter-home-character-show 2s ease forwards, chapter-home-character-hide 2s ease 5s forwards;
+}
+
+.chapter-home-links {
+  $base-delay: .8;
+  @for $i from 1 through 2 {
+    .chapter-home-links-icon-wrap:nth-child(#{$i}) {
+      animation: icon-scale-in .6s ease #{$base-delay + ($i - 1) * 0.1}s forwards;
+    }
+  }
 }
